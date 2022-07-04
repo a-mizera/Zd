@@ -14,7 +14,7 @@
   </nav>
   <div class="card mx-auto" id="main">
     <div class="card-body">
-      
+      <router-view/>
     </div>
   </div>
 </template>
