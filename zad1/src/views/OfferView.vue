@@ -1,8 +1,9 @@
 <template>
     <div>
         <p>Kalkulator:</p>
-        <input type="number"> <button>Sprawdź</button>
-        <br><br>
+        <p>Ile transakcji wykonujesz miesiecznie?</p>
+        <input type="number" v-model="ile"> <button @click="oblicz">Sprawdź</button>
+        <p style="color:red;">{{errmessage}}</p>
         <div class="d-flex flex-row bg-light" >
             <div class="d-flex flex-column mx-auto">
                 <div class="p-2">U nas zaplacisz</div>
@@ -23,21 +24,29 @@
 export default{
     data(){
         return{
-            itemssold:0,
+            errmessage:' ',
+            itemssold:50,
             value1:0,
-            value2:1
+            value2:0
 
 
 
 
         }
-    }}
+    },
     methods:{
-        function oblicz(value){
-            value1=itemssold;
-        }
+            oblicz(){
+            if(this.ile>0 && this.ile%1==0 ){
+                this.value1=this.ile*0.25;
+                this.value2=this.ile*0.50;
+                this.errmessage=' ';
+                }
+            else{
+                this.errmessage='Podano błędną ilość!';
+            }
+        },
 
-    }
+    }}
     
     
 
