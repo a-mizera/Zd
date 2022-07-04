@@ -2,7 +2,7 @@
     <div>
         <p>Kalkulator:</p>
         <p>Ile transakcji wykonujesz miesiecznie?</p>
-        <input type="number" v-model="ile"> <button @click="oblicz">Sprawdź</button>
+        <input type="number" v-model="ile" @input="oblicz()">
         <p style="color:red;">{{errmessage}}</p>
         <div class="d-flex flex-row bg-light" >
             
@@ -23,10 +23,12 @@
 <script>
 
 
+
 export default{
     data(){
         return{
             errmessage:' ',
+            hmuch:0,
             value1:0,
             value2:0
 
@@ -36,6 +38,9 @@ export default{
         }
     },
     methods:{
+        oszczedz(){
+                return this.value2*12-this.value1*12;
+            },
             oblicz(){
             if(this.ile>0 && this.ile%1==0 ){
                 this.value1=this.ile*0.25;
@@ -47,9 +52,11 @@ export default{
                 this.errmessage='Podano błędną ilość!';
                 
             }},
-            oszczedz(){
-                return this.value2*12-this.value1*12;
-            }
+    },
+    watch:{
+            
+            
+            
 
         
 

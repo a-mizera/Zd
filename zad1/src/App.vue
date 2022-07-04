@@ -12,8 +12,8 @@
       </ul>
     </div>
   </nav>
-  <div class="card mx-auto" id="main">
-    <div class="card-body">
+  <div class="card mx-auto" id="main" style="min-height:550px">
+    <div class="card-body" >
       <router-view/>
     </div>
   </div>
