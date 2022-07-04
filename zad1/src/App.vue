@@ -1,28 +1,23 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <span class="navbar-brand"><b>Sellit</b></span>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-collapse collapse">
+      <span class="navbar-brand">Sellit</span>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><router-link to="/" class="nav-link active">Strona główna</router-link></li>
+        <li class="nav-item"><router-link to="/offer" class="nav-link">Oferta</router-link></li>
+        <li class="nav-item"><router-link to="/contact" class="nav-link">Kontakt</router-link></li>
+      
+      </ul>
+    </div>
+  </nav>
+  <div class="card mx-auto" id="main">
+    <div class="card-body">
+      
+    </div>
   </div>
-</nav>
 </template>
-
-<script>
-
-</script>
 
 <style>
 #app {
@@ -31,6 +26,21 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+#main { width: 80%;
+
 }
 </style>
